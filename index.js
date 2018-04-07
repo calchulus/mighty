@@ -1,8 +1,3 @@
-$('.ui.dropdown')
-  .dropdown();
-$('.ui.radio.checkbox')
-  .checkbox()
-;
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyB2MVaewZFZQFZBDuf1ab2zeH8kxRwS6vs",
@@ -13,6 +8,11 @@ $('.ui.radio.checkbox')
     messagingSenderId: "475267345622"
   };
   firebase.initializeApp(config);
+
+$('.ui.dropdown')
+  .dropdown();
+$('.ui.radio.checkbox')
+  .checkbox();
 
 // New Firebase
 var resourceDB = firebase.database().ref('userInfo');
@@ -26,7 +26,7 @@ var first =
     resourceDB.push({
 
         'firstname': $('#firstname').val(),
-        'lastname': $('#lastname').val()
+        'lastname': $('#lastname').val(),
 ////        document.getElementById('firstname').value,
 //        'lastname': document.getElementById('lastname').value,
 //        'email': document.getElementById('email').value,
@@ -37,7 +37,7 @@ var first =
 //        'frequency': document.getElementById('frequency').value,
 //      'causes': document.getElementById('causes').value,
 //        'comments': document.getElementById('comments').value
-            'tipTime': Date.now(),  
+            'tipTime': Date.now()
     }); 
     console.log("sent");
     resourceformTip.reset();

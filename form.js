@@ -71,7 +71,7 @@ var userDB = firebase.database().ref('users');
         'gender':$('dropdown#gender').val(),
            'state':$('dropdown#state').val(),
          'zipcode': $('text#zipcode').val(),
-        'frequency': $('radio#requency').val()
+        'frequency': $('radio#requency').val(),
       'category': $('select#category').val(),
       'tip': $('textarea#tip').val(),
       'url' : $('textarea#url').val(),
