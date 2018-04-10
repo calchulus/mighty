@@ -78,7 +78,7 @@
         we want to learn more about your banking interests</h3>
     <div>
   <div class="row">
-  <form id="userInfo" name="userInfo" action="" method="post">
+  <form id="userInfo" name="userInfo" action="" method="put">
       <div class="fields">
     <div class="field">
       <label>First Name</label>
@@ -104,17 +104,14 @@
            <br>
     <div class="field">
       <label>Gender</label>
-      <div class="ui selection dropdown">
-        <input name="gender" id="gender" type="dropdown">
-        <div class="default text">Gender</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item" value="male">Male</div>
-          <div class="item" value="female">Female</div>
-            <div class="item" value="other">Other</div>
-            <div class="item" value="na">Prefer Not to Disclose</div>
-        </div>
-      </div>
+   
+        <select name="gender" id="gender" class="ui selection dropdown" type="dropdown">
+             <option value="">Gender</option>
+             <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+    <option value="AZ">Prefer Not to Disclose</option>
+          </select>
     </div>
     <br>
      <div class="field">
@@ -181,21 +178,16 @@
           </div>
           <br>
             <label for="frequency"></label>
-      
        <div class="field">
       <label>How often would you like to receive mighty updates about your bank impact?</label>
-      <div class="ui selection dropdown">
-        <input name="frequency" id="frequency" type="dropdown">
-        <div class="default text">N/A</div>
-        <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item" value="weekly">Weekly</div>
-          <div class="item" value="monthly">Monthly</div>
-            <div class="item" value="quarterly">Quarterly</div>
-            <div class="item" value="monthly">Monthly</div>
-        </div>
-      </div>
-    </div>
+   
+        <select name="frequency" id="frequency" class="ui selection dropdown" type="dropdown">
+             <option value="never">N/A</option>
+             <option value="weekly">Weekly</option>
+    <option value="monthly">Monthly</option>
+    <option value="quarterly">Quarterly</option>
+          </select>
+    </div>   
 
     <div class="field">
         Select your favorite causes 
@@ -241,16 +233,32 @@
   </div>
 -->
 
+<!--
     <div class="row" style="margin-right: 10vw">
         <br>
       <input id="addValue" type="submit" class="button ui"/>
         By submitting, you agree to our terms of service!
     </div>     
+-->
          </form>
+      <button class="button ui" type="submit" form="userInfo" value="Submit">Submit</button> By submitting, you agree to our terms of service!
         </div>
         </div>
     </div>
    <footer>
+       <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB2MVaewZFZQFZBDuf1ab2zeH8kxRwS6vs",
+    authDomain: "mightydeposits.firebaseapp.com",
+    databaseURL: "https://mightydeposits.firebaseio.com",
+    projectId: "mightydeposits",
+    storageBucket: "mightydeposits.appspot.com",
+    messagingSenderId: "475267345622"
+  };
+  firebase.initializeApp(config);
+</script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.js"></script> 
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -263,9 +271,11 @@
        
        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/components/transition.js"></script> 
 
+ <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>    
+       
        
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
 <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/form.js'></script>        
 <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/form.min.js'></script>   
 <script src='https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js'></script>
@@ -279,13 +289,14 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/dropdown.min.js  '></script> 
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
- <script src="form.js"></script>
+<!-- <script src="form.js"></script>-->
     <script  src="index.js"></script>
        
         <script  src="UI-Transition-master/index.js"></script>
         <script  src="UI-Transition-master/package.js"></script>
  <script  src="UI-Transition-master/transition.js"></script>
     </footer>
+    
 </body>
 
 </html>
