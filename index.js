@@ -15,14 +15,14 @@ $('.ui.dropdown')
 
 // New Firebase
 //var resourceDB = firebase.database().ref('resource-tip');
-var userDB = firebase.database().ref('userInfo/'+ firebase.auth().currentUser.j);
+var userDB = firebase.database();
 //var userDB = firebase.database().ref('users');
   // Add a New Item
   $("#userInfo").submit(function(event) {
       event.preventDefault();
     // Get the form data
       console.log("hello")
-    userDB.put({
+    userDB.ref('userInfo/' + firebase.auth().currentUser.j).set({
 //        'firstname': $('#firstname').val(),
     'userId': firebase.auth().currentUser.j,
        'firstname': document.getElementById('firstname').value,
