@@ -14,16 +14,17 @@ $('.ui.dropdown')
 //  .checkbox();
 
 // New Firebase
-var resourceDB = firebase.database().ref('resource-tip');
-var userDB = firebase.database().ref('userInfo');
+//var resourceDB = firebase.database().ref('resource-tip');
+var userDB = firebase.database().ref('userInfo/'+ firebase.auth().currentUser.j);
 //var userDB = firebase.database().ref('users');
   // Add a New Item
   $("#userInfo").submit(function(event) {
       event.preventDefault();
     // Get the form data
       console.log("hello")
-    userDB.push({
+    userDB.put({
 //        'firstname': $('#firstname').val(),
+    'userId': firebase.auth().currentUser.j,
        'firstname': document.getElementById('firstname').value,
         'lastname': document.getElementById('lastname').value,
         'email': document.getElementById('email').value,
@@ -32,7 +33,7 @@ var userDB = firebase.database().ref('userInfo');
            'state':document.getElementById('state').value,
          'zipcode': document.getElementById('zipcode').value,
         'frequency': document.getElementById('frequency').value,
-      'causes': document.getElementById('causes').value,
+      'causes': $('#causes').val(),
         'comments': document.getElementById('comments').value,
             'tipTime': Date.now()
     }); 
